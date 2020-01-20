@@ -48,34 +48,108 @@ GLuint index;
 void Game::initialize()
 {
 	isRunning = true;
-
+	
 	glewInit();
+
+	//Cubes Points 
+	// FACE 
+	// A : -1, 1 -5
+	// B : 1, 1, -5 
+	// C : 1, -1, -5
+	// D : -1, -1, -5
+	//BACK 
+	// E : -1, 1, -7
+	// F : 1, 1, -7
+	// G : 1, -1, -7
+	// H : -1, -1, -7
+
+	//Point A 
+	//vertex[A].coordinate[0] = -1.0f;
+	//vertex[A].coordinate[1] = 1.0f;
+	//vertex[A].coordinate[2] = -5.0f;
+
+	//Point B 
+	//vertex[B].coordinate[0] = 1.0f;
+	//vertex[B].coordinate[1] = 1.0f;
+	//vertex[B].coordinate[2] = -5.0f;
+
+	//Point C 
+	//vertex[C].coordinate[0] = 1.0f;
+	//vertex[C].coordinate[1] = -1.0f;
+	//vertex[C].coordinate[2] = -5.0f;
+
+	//Point D 
+	//vertex[D].coordinate[0] = -1.0f;
+	//vertex[D].coordinate[1] = -1.0f;
+	//vertex[D].coordinate[2] = -5.0f;
+
+	//Point E 
+	//vertex[E].coordinate[0] = -1.0f;
+	//vertex[E].coordinate[1] = 1.0f;
+	//vertex[E].coordinate[2] = -7.0f;
+
+	//Point F 
+	//vertex[F].coordinate[0] = 1.0f;
+	//vertex[F].coordinate[1] = 1.0f;
+	//vertex[F].coordinate[2] = -7.0f;
+
+	//Point G 
+	//vertex[G].coordinate[0] = 1.0f;
+	//vertex[G].coordinate[1] = -1.0f;
+	//vertex[G].coordinate[2] = -7.0f;
+
+	//Point H 
+	//vertex[H].coordinate[0] = -1.0f;
+	//vertex[H].coordinate[1] = -1.0f;
+	//vertex[H].coordinate[2] = -7.0f;
+
 
 	/* Vertices counter-clockwise winding */
 
-	vertex[0].coordinate[0] = -0.5f;
-	vertex[0].coordinate[1] = -0.5f;
-	vertex[0].coordinate[2] = 0.0f;
+	//--------------------------T1 EFG---------------------------------------
+	//Point E 
+	vertex[0].coordinate[0] = -1.0f;
+	vertex[0].coordinate[1] = 1.0f;
+	vertex[0].coordinate[2] = -7.0f;
 
-	vertex[1].coordinate[0] = -0.5f;
-	vertex[1].coordinate[1] = 0.5f;
-	vertex[1].coordinate[2] = 0.0f;
+	//Point F 
+	vertex[1].coordinate[0] = 1.0f;
+	vertex[1].coordinate[1] = 1.0f;
+	vertex[1].coordinate[2] = -7.0f;
 
-	vertex[2].coordinate[0] = 0.5f;
-	vertex[2].coordinate[1] = 0.5f;
-	vertex[2].coordinate[2] = 0.0f;
+	//Point G 
+	vertex[2].coordinate[0] = 1.0f;
+	vertex[2].coordinate[1] = -1.0f;
+	vertex[2].coordinate[2] = -7.0f;
 
-	//vertex[3].coordinate[0] = 0.5f; 
-	//vertex[3].coordinate[1] = 0.5f;  
-	//vertex[3].coordinate[2] = 0.0f;
+	//--------------------------T2 FGH---------------------------------------
+	//Point F
+	vertex[3].coordinate[0] = 1.0f;
+	vertex[3].coordinate[1] = 1.0f;
+	vertex[3].coordinate[2] = -7.0f;
 
-	//vertex[4].coordinate[0] = 0.5f; 
-	//vertex[4].coordinate[1] = -0.5f;  
-	//vertex[4].coordinate[2] = 0.0f;
+	//Point G
+	vertex[4].coordinate[0] = 1.0f;
+	vertex[4].coordinate[1] = -1.0f;
+	vertex[4].coordinate[2] = -7.0f;
 
-	//vertex[5].coordinate[0] = -0.5f; 
-	//vertex[5].coordinate[1] = -0.5f;  
-	//vertex[5].coordinate[2] = 0.0f;
+	//Point H
+	vertex[5].coordinate[0] = -1.0f;
+	vertex[5].coordinate[1] = -1.0f;
+	vertex[5].coordinate[2] = -7.0f;
+	
+
+	//--------------------------T3 CDG---------------------------------------
+	//--------------------------T4 DGH---------------------------------------
+	//--------------------------T5 DEH---------------------------------------
+	//--------------------------T6 ADE---------------------------------------
+	//--------------------------T7 BCG---------------------------------------
+	//--------------------------T8 BFG---------------------------------------
+	//--------------------------T9 ABE---------------------------------------
+	//--------------------------T10 BEF--------------------------------------
+	//--------------------------T11 ABC---------------------------------------
+	//--------------------------T12 BCD---------------------------------------
+
 
 	vertex[0].color[0] = 0.1f;
 	vertex[0].color[1] = 1.0f;
@@ -127,30 +201,16 @@ void Game::update()
 
 	if (elapsed.asSeconds() >= 1.0f)
 	{
-		clock.restart();
 
-		if (!flip)
-		{
-			flip = true;
-		}
-		else
-			flip = false;
 	}
 
-	if (flip)
-	{
-		rotationAngle += 0.005f;
 
-		if (rotationAngle > 360.0f)
-		{
-			rotationAngle -= 360.0f;
-		}
-	}
-
+	/*
 	//Change vertex data
 	vertex[0].coordinate[0] += -0.0001f;
 	vertex[0].coordinate[1] += -0.0001f;
 	vertex[0].coordinate[2] += -0.0001f;
+	*/
 
 	cout << "Update up" << endl;
 }
