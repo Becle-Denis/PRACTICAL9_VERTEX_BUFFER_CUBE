@@ -49,6 +49,11 @@ void Game::initialize()
 {
 	isRunning = true;
 	
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluPerspective(45.0, window.getSize().x / window.getSize().y, 1.0, 500.0);
+	glMatrixMode(GL_MODELVIEW);
+
 	glewInit();
 
 	//Cubes Points 
