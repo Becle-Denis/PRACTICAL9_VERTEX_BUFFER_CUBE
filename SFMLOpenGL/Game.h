@@ -9,7 +9,6 @@
 
 using namespace std;
 using namespace sf;
-using namespace gpp;
 
 class Game
 {
@@ -28,5 +27,5 @@ private:
 	Clock clock;
 	Time elapsed;
 
-	float rotationAngle = 0.0f;
+	sf::Clock movementCLock;
 };

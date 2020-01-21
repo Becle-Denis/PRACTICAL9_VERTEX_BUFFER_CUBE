@@ -205,10 +205,6 @@ void Game::update()
 {
 	elapsed = clock.getElapsedTime();
 
-	if (elapsed.asSeconds() >= 1.0f)
-	{
-
-	}
 
 
 	/*
