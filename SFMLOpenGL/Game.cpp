@@ -355,6 +355,46 @@ void Game::update()
 			}
 		}
 
+		// Scalling up
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::U))
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				//adapting to vector
+				db::Vector3 v(vertex[i].coordinate[0], vertex[i].coordinate[1], vertex[i].coordinate[2]);
+
+				//scalling
+				v = v - center;
+				v = v * db::Matrix3::scale3D(101);
+				v = v + center;
+
+				//reassigning value
+				vertex[i].coordinate[0] = v.x;
+				vertex[i].coordinate[1] = v.y;
+				vertex[i].coordinate[2] = v.z;
+			}
+		}
+
+		// Scalling Down
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				//adapting to vector
+				db::Vector3 v(vertex[i].coordinate[0], vertex[i].coordinate[1], vertex[i].coordinate[2]);
+
+				//scalling
+				v = v - center;
+				v = v * db::Matrix3::scale3D(99);
+				v = v + center;
+
+				//reassigning value
+				vertex[i].coordinate[0] = v.x;
+				vertex[i].coordinate[1] = v.y;
+				vertex[i].coordinate[2] = v.z;
+			}
+		}
+
 	}
 
 	cout << "Update up" << endl;
