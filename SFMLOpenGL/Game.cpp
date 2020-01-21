@@ -247,6 +247,39 @@ void Game::update()
 			}
 		}
 
+		// Translating up
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				//adapting to vector
+				db::Vector3 v(vertex[i].coordinate[0], vertex[i].coordinate[1], 1);
+
+				//translating
+				v = v * db::Matrix3::translate(0, 1);
+
+				//reassigning value
+				vertex[i].coordinate[0] = v.x;
+				vertex[i].coordinate[1] = v.y;
+			}
+		}
+
+		// Translating down
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				//adapting to vector
+				db::Vector3 v(vertex[i].coordinate[0], vertex[i].coordinate[1], 1);
+
+				//translating
+				v = v * db::Matrix3::translate(0, -1);
+
+				//reassigning value
+				vertex[i].coordinate[0] = v.x;
+				vertex[i].coordinate[1] = v.y;
+			}
+		}
 
 	}
 
