@@ -29,5 +29,5 @@ private:
 
 	sf::Clock movementCLock;
 
-	const int VERTEX_NUMBER{9};
+	const int VERTEX_NUMBER{12};
 };

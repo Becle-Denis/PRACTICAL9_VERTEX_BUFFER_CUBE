@@ -36,8 +36,8 @@ typedef struct
 	float color[3];
 } Vertex;
 
-Vertex vertex[9]; ////////////////////////////AAAAA
-GLubyte triangles[9]; /////////////////////////AAAAA
+Vertex vertex[12]; ////////////////////////////AAAAA
+GLubyte triangles[12]; /////////////////////////AAAAA
 
 /* Variable to hold the VBO identifier */
 GLuint vbo[1];
@@ -160,7 +160,22 @@ void Game::initialize()
 	vertex[8].coordinate[2] = -7.0f;
 
 	//--------------------------T4 DGH---------------------------------------
-	
+	//Point D 
+	vertex[9].coordinate[0] = -1.0f;
+	vertex[9].coordinate[1] = -1.0f;
+	vertex[9].coordinate[2] = -5.0f;
+
+	//Point G
+	vertex[10].coordinate[0] = 1.0f;
+	vertex[10].coordinate[1] = -1.0f;
+	vertex[10].coordinate[2] = -7.0f;
+
+	//Point H
+	vertex[11].coordinate[0] = -1.0f;
+	vertex[11].coordinate[1] = -1.0f;
+	vertex[11].coordinate[2] = -7.0f;
+
+
 	//--------------------------T5 DEH---------------------------------------
 	//--------------------------T6 ADE---------------------------------------
 	//--------------------------T7 BCG---------------------------------------
@@ -207,11 +222,23 @@ void Game::initialize()
 	vertex[8].color[1] = 1.0f;
 	vertex[8].color[2] = 0.0f;
 
+	vertex[9].color[0] = 0.4f;
+	vertex[9].color[1] = 1.0f;
+	vertex[9].color[2] = 0.0f;
+
+	vertex[10].color[0] = 0.5f;
+	vertex[10].color[1] = 1.0f;
+	vertex[10].color[2] = 0.0f;
+
+	vertex[11].color[0] = 0.6f;
+	vertex[11].color[1] = 1.0f;
+	vertex[11].color[2] = 0.0f;
+
 
 	triangles[0] = 0;   triangles[1] = 1;   triangles[2] = 2;
 	triangles[3] = 3;   triangles[4] = 4;   triangles[5] = 5;
 	triangles[6] = 6;   triangles[7] = 7;   triangles[8] = 8;
-	//triangles[9] = 9;   triangles[10] = 10;   triangles[11] = 11;
+	triangles[9] = 9;   triangles[10] = 10;   triangles[11] = 11;
 
 
 	/* Create a new VBO using VBO id */
