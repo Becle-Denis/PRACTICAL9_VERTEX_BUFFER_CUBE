@@ -127,9 +127,10 @@ void Game::initialize()
 	vertex[2].coordinate[1] = -1.0f;
 	vertex[2].coordinate[2] = -7.0f;
 
+	
 	//--------------------------T2 FGH---------------------------------------
 	//Point F
-	vertex[3].coordinate[0] = 1.0f;
+	vertex[3].coordinate[0] = -1.0f; //!!!!
 	vertex[3].coordinate[1] = 1.0f;
 	vertex[3].coordinate[2] = -7.0f;
 
