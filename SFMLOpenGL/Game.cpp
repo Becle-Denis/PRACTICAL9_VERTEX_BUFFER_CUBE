@@ -36,8 +36,8 @@ typedef struct
 	float color[3];
 } Vertex;
 
-Vertex vertex[6]; ////////////////////////////AAAAA
-GLubyte triangles[6]; /////////////////////////AAAAA
+Vertex vertex[9]; ////////////////////////////AAAAA
+GLubyte triangles[9]; /////////////////////////AAAAA
 
 /* Variable to hold the VBO identifier */
 GLuint vbo[1];
@@ -46,7 +46,7 @@ GLuint index;
 void Game::initialize()
 {
 	isRunning = true;
-	
+
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	gluPerspective(45.0, window.getSize().x / window.getSize().y, 1.0, 500.0);
@@ -125,7 +125,7 @@ void Game::initialize()
 	vertex[2].coordinate[1] = -1.0f;
 	vertex[2].coordinate[2] = -7.0f;
 
-	
+
 	//--------------------------T2 FGH---------------------------------------
 	//Point F
 	vertex[3].coordinate[0] = -1.0f; //!!!!
@@ -141,10 +141,26 @@ void Game::initialize()
 	vertex[5].coordinate[0] = -1.0f;
 	vertex[5].coordinate[1] = -1.0f;
 	vertex[5].coordinate[2] = -7.0f;
-	
+
 
 	//--------------------------T3 CDG---------------------------------------
+	//Point C 
+	vertex[6].coordinate[0] = 1.0f;
+	vertex[6].coordinate[1] = -1.0f;
+	vertex[6].coordinate[2] = -5.0f;
+
+	//Point D 
+	vertex[7].coordinate[0] = -1.0f;
+	vertex[7].coordinate[1] = -1.0f;
+	vertex[7].coordinate[2] = -5.0f;
+
+	//Point G
+	vertex[8].coordinate[0] = 1.0f;
+	vertex[8].coordinate[1] = -1.0f;
+	vertex[8].coordinate[2] = -7.0f;
+
 	//--------------------------T4 DGH---------------------------------------
+	
 	//--------------------------T5 DEH---------------------------------------
 	//--------------------------T6 ADE---------------------------------------
 	//--------------------------T7 BCG---------------------------------------
@@ -179,9 +195,24 @@ void Game::initialize()
 	vertex[5].color[1] = 1.0f;
 	vertex[5].color[2] = 0.0f;
 
+	vertex[6].color[0] = 0.4f;
+	vertex[6].color[1] = 1.0f;
+	vertex[6].color[2] = 0.0f;
+
+	vertex[7].color[0] = 0.5f;
+	vertex[7].color[1] = 1.0f;
+	vertex[7].color[2] = 0.0f;
+
+	vertex[8].color[0] = 0.6f;
+	vertex[8].color[1] = 1.0f;
+	vertex[8].color[2] = 0.0f;
+
 
 	triangles[0] = 0;   triangles[1] = 1;   triangles[2] = 2;
 	triangles[3] = 3;   triangles[4] = 4;   triangles[5] = 5;
+	triangles[6] = 6;   triangles[7] = 7;   triangles[8] = 8;
+	//triangles[9] = 9;   triangles[10] = 10;   triangles[11] = 11;
+
 
 	/* Create a new VBO using VBO id */
 	glGenBuffers(1, vbo);
@@ -190,12 +221,12 @@ void Game::initialize()
 	glBindBuffer(GL_ARRAY_BUFFER, vbo[0]);
 
 	/* Upload vertex data to GPU */
-	glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * 6, vertex, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * VERTEX_NUMBER, vertex, GL_STATIC_DRAW);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 
 	glGenBuffers(1, &index);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, index);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(GLubyte) * 6, triangles, GL_STATIC_DRAW);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(GLubyte) * VERTEX_NUMBER, triangles, GL_STATIC_DRAW);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 }
 
@@ -411,7 +442,7 @@ void Game::render()
 
 	/*	As the data positions will be updated by the this program on the
 		CPU bind the updated data to the GPU for drawing	*/
-	glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * 6, vertex, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * VERTEX_NUMBER, vertex, GL_STATIC_DRAW);
 
 	glEnableClientState(GL_VERTEX_ARRAY);
 	glEnableClientState(GL_COLOR_ARRAY);
