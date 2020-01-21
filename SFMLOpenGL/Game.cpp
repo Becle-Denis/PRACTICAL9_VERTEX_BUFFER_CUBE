@@ -205,6 +205,31 @@ void Game::update()
 {
 	elapsed = clock.getElapsedTime();
 
+	//Allowed movement
+	if (movementCLock.getElapsedTime() > sf::milliseconds(30))
+	{
+		movementCLock.restart();
+
+
+		//------------TRANSLATING------------------------
+
+		// Translating right
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+		{
+			for (int i = 0; i < 6; i++) 
+			{
+				//adapting to vector
+				db::Vector3 v(vertex[i].coordinate[0], vertex[i].coordinate[1], 1);
+
+				//translating
+				v = v * db::Matrix3::translate(1, 0);
+
+				//reassigning value
+				vertex[i].coordinate[0] = v.x;
+				vertex[i].coordinate[1] = v.y;
+			}
+		}
+	}
 
 
 	/*
