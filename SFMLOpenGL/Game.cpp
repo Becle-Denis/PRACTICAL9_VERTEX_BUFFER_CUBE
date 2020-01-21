@@ -36,8 +36,8 @@ typedef struct
 	float color[3];
 } Vertex;
 
-Vertex vertex[30]; ////////////////////////////AAAAA
-GLubyte triangles[30]; /////////////////////////AAAAA
+Vertex vertex[36]; 
+GLubyte triangles[36];
 
 /* Variable to hold the VBO identifier */
 GLuint vbo[1];
@@ -274,7 +274,36 @@ void Game::initialize()
 
 
 	//--------------------------T11 ABC---------------------------------------
+		//Point A 
+	vertex[30].coordinate[0] = -1.0f;
+	vertex[30].coordinate[1] = 1.0f;
+	vertex[30].coordinate[2] = -5.0f;
+
+	//Point B 
+	vertex[31].coordinate[0] = 1.0f;
+	vertex[31].coordinate[1] = 1.0f;
+	vertex[31].coordinate[2] = -5.0f;
+
+	//Point C 
+	vertex[32].coordinate[0] = 1.0f;
+	vertex[32].coordinate[1] = -1.0f;
+	vertex[32].coordinate[2] = -5.0f;
+
 	//--------------------------T12 BCD---------------------------------------
+	//Point B 
+	vertex[33].coordinate[0] = 1.0f;
+	vertex[33].coordinate[1] = 1.0f;
+	vertex[33].coordinate[2] = -5.0f;
+
+	//Point C 
+	vertex[34].coordinate[0] = 1.0f;
+	vertex[34].coordinate[1] = -1.0f;
+	vertex[34].coordinate[2] = -5.0f;
+
+	//Point D 
+	vertex[35].coordinate[0] = -1.0f;
+	vertex[35].coordinate[1] = -1.0f;
+	vertex[35].coordinate[2] = -5.0f;
 
 
 	vertex[0].color[0] = 0.1f;
@@ -397,6 +426,30 @@ void Game::initialize()
 	vertex[29].color[1] = 1.0f;
 	vertex[29].color[2] = 0.0f;
 
+	vertex[30].color[0] = 0.4f;
+	vertex[30].color[1] = 1.0f;
+	vertex[30].color[2] = 0.0f;
+
+	vertex[31].color[0] = 0.5f;
+	vertex[31].color[1] = 1.0f;
+	vertex[31].color[2] = 0.0f;
+
+	vertex[32].color[0] = 0.6f;
+	vertex[32].color[1] = 1.0f;
+	vertex[32].color[2] = 0.0f;
+
+	vertex[33].color[0] = 0.4f;
+	vertex[33].color[1] = 1.0f;
+	vertex[33].color[2] = 0.0f;
+
+	vertex[34].color[0] = 0.5f;
+	vertex[34].color[1] = 1.0f;
+	vertex[34].color[2] = 0.0f;
+
+	vertex[35].color[0] = 0.6f;
+	vertex[35].color[1] = 1.0f;
+	vertex[35].color[2] = 0.0f;
+
 
 	triangles[0] = 0;   triangles[1] = 1;   triangles[2] = 2;
 	triangles[3] = 3;   triangles[4] = 4;   triangles[5] = 5;
@@ -408,6 +461,8 @@ void Game::initialize()
 	triangles[21] = 21;   triangles[22] = 22;   triangles[23] = 23;
 	triangles[24] = 24;   triangles[25] = 25;   triangles[26] = 26;
 	triangles[27] = 27;   triangles[28] = 28;   triangles[29] = 29;
+	triangles[30] = 30;   triangles[31] = 31;   triangles[32] = 32;
+	triangles[33] = 33;   triangles[34] = 34;   triangles[35] = 35;
 
 
 	/* Create a new VBO using VBO id */
