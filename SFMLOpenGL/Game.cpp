@@ -274,7 +274,7 @@ void Game::initialize()
 
 
 	//--------------------------T11 ABC---------------------------------------
-		//Point A 
+	//Point A 
 	vertex[30].coordinate[0] = -1.0f;
 	vertex[30].coordinate[1] = 1.0f;
 	vertex[30].coordinate[2] = -5.0f;
@@ -291,7 +291,7 @@ void Game::initialize()
 
 	//--------------------------T12 BCD---------------------------------------
 	//Point B 
-	vertex[33].coordinate[0] = 1.0f;
+	vertex[33].coordinate[0] = -1.0f;
 	vertex[33].coordinate[1] = 1.0f;
 	vertex[33].coordinate[2] = -5.0f;
 
@@ -304,6 +304,8 @@ void Game::initialize()
 	vertex[35].coordinate[0] = -1.0f;
 	vertex[35].coordinate[1] = -1.0f;
 	vertex[35].coordinate[2] = -5.0f;
+
+
 
 
 	vertex[0].color[0] = 0.1f;
@@ -331,100 +333,100 @@ void Game::initialize()
 	vertex[5].color[2] = 0.0f;
 
 	vertex[6].color[0] = 0.4f;
-	vertex[6].color[1] = 1.0f;
-	vertex[6].color[2] = 0.0f;
+	vertex[6].color[1] = 0.0f;
+	vertex[6].color[2] = 1.0f;
 
 	vertex[7].color[0] = 0.5f;
-	vertex[7].color[1] = 1.0f;
-	vertex[7].color[2] = 0.0f;
+	vertex[7].color[1] = 0.0f;
+	vertex[7].color[2] = 1.0f;
 
 	vertex[8].color[0] = 0.6f;
-	vertex[8].color[1] = 1.0f;
-	vertex[8].color[2] = 0.0f;
+	vertex[8].color[1] = 0.0f;
+	vertex[8].color[2] = 1.0f;
 
 	vertex[9].color[0] = 0.4f;
-	vertex[9].color[1] = 1.0f;
-	vertex[9].color[2] = 0.0f;
+	vertex[9].color[1] = 0.0f;
+	vertex[9].color[2] = 1.0f;
 
 	vertex[10].color[0] = 0.5f;
-	vertex[10].color[1] = 1.0f;
-	vertex[10].color[2] = 0.0f;
+	vertex[10].color[1] = 0.0f;
+	vertex[10].color[2] = 1.0f;
 
 	vertex[11].color[0] = 0.6f;
-	vertex[11].color[1] = 1.0f;
-	vertex[11].color[2] = 0.0f;
+	vertex[11].color[1] = 0.0f;
+	vertex[11].color[2] = 1.0f;
 
 	vertex[12].color[0] = 0.4f;
 	vertex[12].color[1] = 1.0f;
-	vertex[12].color[2] = 0.0f;
+	vertex[12].color[2] = 1.0f;
 
 	vertex[13].color[0] = 0.5f;
 	vertex[13].color[1] = 1.0f;
-	vertex[13].color[2] = 0.0f;
+	vertex[13].color[2] = 1.0f;
 
 	vertex[14].color[0] = 0.6f;
 	vertex[14].color[1] = 1.0f;
-	vertex[14].color[2] = 0.0f;
+	vertex[14].color[2] = 1.0f;
 
 	vertex[15].color[0] = 0.4f;
 	vertex[15].color[1] = 1.0f;
-	vertex[15].color[2] = 0.0f;
+	vertex[15].color[2] = 1.0f;
 
 	vertex[16].color[0] = 0.5f;
 	vertex[16].color[1] = 1.0f;
-	vertex[16].color[2] = 0.0f;
+	vertex[16].color[2] = 1.0f;
 
 	vertex[17].color[0] = 0.6f;
 	vertex[17].color[1] = 1.0f;
-	vertex[17].color[2] = 0.0f;
+	vertex[17].color[2] = 1.0f;
 
-	vertex[18].color[0] = 0.4f;
-	vertex[18].color[1] = 1.0f;
-	vertex[18].color[2] = 0.0f;
+	vertex[18].color[0] = 1.0f;
+	vertex[18].color[1] = 0.0f;
+	vertex[18].color[2] = 0.4f;
 
-	vertex[19].color[0] = 0.5f;
-	vertex[19].color[1] = 1.0f;
-	vertex[19].color[2] = 0.0f;
+	vertex[19].color[0] = 1.0f;
+	vertex[19].color[1] = 0.0f;
+	vertex[19].color[2] = 0.5f;
 
-	vertex[20].color[0] = 0.6f;
-	vertex[20].color[1] = 1.0f;
-	vertex[20].color[2] = 0.0f;
+	vertex[20].color[0] = 1.0f;
+	vertex[20].color[1] = 0.0f;
+	vertex[20].color[2] = 0.6f;
 
-	vertex[21].color[0] = 0.4f;
-	vertex[21].color[1] = 1.0f;
-	vertex[21].color[2] = 0.0f;
+	vertex[21].color[0] = 1.0f;
+	vertex[21].color[1] = 0.0f;
+	vertex[21].color[2] = 0.4f;
 
-	vertex[22].color[0] = 0.5f;
-	vertex[22].color[1] = 1.0f;
-	vertex[22].color[2] = 0.0f;
+	vertex[22].color[0] = 1.0f;
+	vertex[22].color[1] = 0.0f;
+	vertex[22].color[2] = 0.5f;
 
-	vertex[23].color[0] = 0.6f;
-	vertex[23].color[1] = 1.0f;
-	vertex[23].color[2] = 0.0f;
+	vertex[23].color[0] = 1.0f;
+	vertex[23].color[1] = 0.0f;
+	vertex[23].color[2] = 0.6f;
 
-	vertex[24].color[0] = 0.4f;
+	vertex[24].color[0] = 1.0f;
 	vertex[24].color[1] = 1.0f;
-	vertex[24].color[2] = 0.0f;
+	vertex[24].color[2] = 0.4f;
 
-	vertex[25].color[0] = 0.5f;
+	vertex[25].color[0] = 1.0f;
 	vertex[25].color[1] = 1.0f;
-	vertex[25].color[2] = 0.0f;
+	vertex[25].color[2] = 0.5f;
 
-	vertex[26].color[0] = 0.6f;
+	vertex[26].color[0] = 1.0f;
 	vertex[26].color[1] = 1.0f;
-	vertex[26].color[2] = 0.0f;
+	vertex[26].color[2] = 0.6f;
 
-	vertex[27].color[0] = 0.4f;
+	vertex[27].color[0] = 1.0f;
 	vertex[27].color[1] = 1.0f;
-	vertex[27].color[2] = 0.0f;
+	vertex[27].color[2] = 0.4f;
 
-	vertex[28].color[0] = 0.5f;
+	vertex[28].color[0] = 1.0f;
 	vertex[28].color[1] = 1.0f;
-	vertex[28].color[2] = 0.0f;
+	vertex[28].color[2] = 0.5f;
 
-	vertex[29].color[0] = 0.6f;
+	vertex[29].color[0] = 1.0f;
 	vertex[29].color[1] = 1.0f;
-	vertex[29].color[2] = 0.0f;
+	vertex[29].color[2] = 0.6f;
 
 	vertex[30].color[0] = 0.4f;
 	vertex[30].color[1] = 1.0f;
