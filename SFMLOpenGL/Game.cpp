@@ -36,8 +36,8 @@ typedef struct
 	float color[3];
 } Vertex;
 
-Vertex vertex[12]; ////////////////////////////AAAAA
-GLubyte triangles[12]; /////////////////////////AAAAA
+Vertex vertex[18]; ////////////////////////////AAAAA
+GLubyte triangles[18]; /////////////////////////AAAAA
 
 /* Variable to hold the VBO identifier */
 GLuint vbo[1];
@@ -91,8 +91,8 @@ void Game::initialize()
 	//vertex[E].coordinate[1] = 1.0f;
 	//vertex[E].coordinate[2] = -7.0f;
 
-	//Point F 
-	//vertex[F].coordinate[0] = 1.0f;
+	//Point F //!!
+	//vertex[F].coordinate[0] = 1.0f; 
 	//vertex[F].coordinate[1] = 1.0f;
 	//vertex[F].coordinate[2] = -7.0f;
 
@@ -177,7 +177,38 @@ void Game::initialize()
 
 
 	//--------------------------T5 DEH---------------------------------------
+	//Point D 
+	vertex[12].coordinate[0] = -1.0f;
+	vertex[12].coordinate[1] = -1.0f;
+	vertex[12].coordinate[2] = -5.0f;
+
+	//Point E 
+	vertex[13].coordinate[0] = -1.0f;
+	vertex[13].coordinate[1] = 1.0f;
+	vertex[13].coordinate[2] = -7.0f;
+
+	//Point H
+	vertex[14].coordinate[0] = -1.0f;
+	vertex[14].coordinate[1] = -1.0f;
+	vertex[14].coordinate[2] = -7.0f;
+
 	//--------------------------T6 ADE---------------------------------------
+	//Point A 
+	vertex[15].coordinate[0] = -1.0f;
+	vertex[15].coordinate[1] = 1.0f;
+	vertex[15].coordinate[2] = -5.0f;
+
+	//Point D 
+	vertex[16].coordinate[0] = -1.0f;
+	vertex[16].coordinate[1] = -1.0f;
+	vertex[16].coordinate[2] = -5.0f;
+
+	//Point E 
+	vertex[17].coordinate[0] = -1.0f;
+	vertex[17].coordinate[1] = 1.0f;
+	vertex[17].coordinate[2] = -7.0f;
+
+
 	//--------------------------T7 BCG---------------------------------------
 	//--------------------------T8 BFG---------------------------------------
 	//--------------------------T9 ABE---------------------------------------
@@ -234,11 +265,37 @@ void Game::initialize()
 	vertex[11].color[1] = 1.0f;
 	vertex[11].color[2] = 0.0f;
 
+	vertex[12].color[0] = 0.4f;
+	vertex[12].color[1] = 1.0f;
+	vertex[12].color[2] = 0.0f;
+
+	vertex[13].color[0] = 0.5f;
+	vertex[13].color[1] = 1.0f;
+	vertex[13].color[2] = 0.0f;
+
+	vertex[14].color[0] = 0.6f;
+	vertex[14].color[1] = 1.0f;
+	vertex[14].color[2] = 0.0f;
+
+	vertex[15].color[0] = 0.4f;
+	vertex[15].color[1] = 1.0f;
+	vertex[15].color[2] = 0.0f;
+
+	vertex[16].color[0] = 0.5f;
+	vertex[16].color[1] = 1.0f;
+	vertex[16].color[2] = 0.0f;
+
+	vertex[17].color[0] = 0.6f;
+	vertex[17].color[1] = 1.0f;
+	vertex[17].color[2] = 0.0f;
+
 
 	triangles[0] = 0;   triangles[1] = 1;   triangles[2] = 2;
 	triangles[3] = 3;   triangles[4] = 4;   triangles[5] = 5;
 	triangles[6] = 6;   triangles[7] = 7;   triangles[8] = 8;
 	triangles[9] = 9;   triangles[10] = 10;   triangles[11] = 11;
+	triangles[12] = 12;   triangles[13] = 13;   triangles[14] = 14;
+	triangles[15] = 15;   triangles[16] = 16;   triangles[17] = 17;
 
 
 	/* Create a new VBO using VBO id */
