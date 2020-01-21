@@ -28,4 +28,6 @@ private:
 	Time elapsed;
 
 	sf::Clock movementCLock;
+
+	const int VERTEX_NUMBER{3};
 };

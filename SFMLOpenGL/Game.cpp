@@ -1,7 +1,5 @@
 #include <Game.h>
 
-static bool flip;
-
 Game::Game() : window(VideoMode(800, 600), "OpenGL Cube VBO")
 {
 }
@@ -38,8 +36,8 @@ typedef struct
 	float color[3];
 } Vertex;
 
-Vertex vertex[6];
-GLubyte triangles[6];
+Vertex vertex[6]; ////////////////////////////AAAAA
+GLubyte triangles[6]; /////////////////////////AAAAA
 
 /* Variable to hold the VBO identifier */
 GLuint vbo[1];
@@ -214,20 +212,20 @@ void Game::update()
 		float sumX = 0;
 		float sumY = 0;
 		float sumZ = 0;
-		for (int i = 0; i < 6; i ++)
+		for (int i = 0; i < VERTEX_NUMBER; i ++)
 		{
 			sumX += vertex[i].coordinate[0];
 			sumY += vertex[i].coordinate[1];
 			sumZ += vertex[i].coordinate[2];
 		}
-		db::Vector3 center(sumX / 6, sumY / 6, sumZ / 6);
+		db::Vector3 center(sumX / VERTEX_NUMBER, sumY / VERTEX_NUMBER, sumZ / VERTEX_NUMBER);
 
 		//------------ROTATING--------------------------
 
 		// rotation X 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::X))
 		{
-			for (int i = 0; i < 6; i++)
+			for (int i = 0; i < VERTEX_NUMBER; i++)
 			{
 				//adapting to vector
 				db::Vector3 v(vertex[i].coordinate[0], vertex[i].coordinate[1], vertex[i].coordinate[2]);
@@ -248,7 +246,7 @@ void Game::update()
 		// rotation Y
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y))
 		{
-			for (int i = 0; i < 6; i++)
+			for (int i = 0; i < VERTEX_NUMBER; i++)
 			{
 				//adapting to vector
 				db::Vector3 v(vertex[i].coordinate[0], vertex[i].coordinate[1],vertex[i].coordinate[2]);
@@ -268,7 +266,7 @@ void Game::update()
 		// rotation Z 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
 		{
-			for (int i = 0; i < 6; i++)
+			for (int i = 0; i < VERTEX_NUMBER; i++)
 			{
 				//adapting to vector
 				db::Vector3 v(vertex[i].coordinate[0], vertex[i].coordinate[1], vertex[i].coordinate[2]);
@@ -290,7 +288,7 @@ void Game::update()
 		// Translating right
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 		{
-			for (int i = 0; i < 6; i++) 
+			for (int i = 0; i < VERTEX_NUMBER; i++)
 			{
 				//adapting to vector
 				db::Vector3 v(vertex[i].coordinate[0], vertex[i].coordinate[1], 1);
@@ -307,7 +305,7 @@ void Game::update()
 		// Translating left
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 		{
-			for (int i = 0; i < 6; i++)
+			for (int i = 0; i < VERTEX_NUMBER; i++)
 			{
 				//adapting to vector
 				db::Vector3 v(vertex[i].coordinate[0], vertex[i].coordinate[1], 1);
@@ -324,7 +322,7 @@ void Game::update()
 		// Translating up
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 		{
-			for (int i = 0; i < 6; i++)
+			for (int i = 0; i < VERTEX_NUMBER; i++)
 			{
 				//adapting to vector
 				db::Vector3 v(vertex[i].coordinate[0], vertex[i].coordinate[1], 1);
@@ -341,7 +339,7 @@ void Game::update()
 		// Translating down
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 		{
-			for (int i = 0; i < 6; i++)
+			for (int i = 0; i < VERTEX_NUMBER; i++)
 			{
 				//adapting to vector
 				db::Vector3 v(vertex[i].coordinate[0], vertex[i].coordinate[1], 1);
@@ -358,7 +356,7 @@ void Game::update()
 		// Scalling up
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::U))
 		{
-			for (int i = 0; i < 6; i++)
+			for (int i = 0; i < VERTEX_NUMBER; i++)
 			{
 				//adapting to vector
 				db::Vector3 v(vertex[i].coordinate[0], vertex[i].coordinate[1], vertex[i].coordinate[2]);
@@ -378,7 +376,7 @@ void Game::update()
 		// Scalling Down
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 		{
-			for (int i = 0; i < 6; i++)
+			for (int i = 0; i < VERTEX_NUMBER; i++)
 			{
 				//adapting to vector
 				db::Vector3 v(vertex[i].coordinate[0], vertex[i].coordinate[1], vertex[i].coordinate[2]);
@@ -424,7 +422,7 @@ void Game::render()
 	/*	Draw Triangle from VBO	(set where to start from as VBO can contain 
 		model compoents that are and are not to be drawn )	*/
 	glVertexPointer(3, GL_FLOAT, sizeof(Vertex), (char*)NULL + 0);
-	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_BYTE, (char*)NULL + 0);
+	glDrawElements(GL_TRIANGLES, VERTEX_NUMBER, GL_UNSIGNED_BYTE, (char*)NULL + 0);
 
 	glDisableClientState(GL_VERTEX_ARRAY);
 	glDisableClientState(GL_COLOR_ARRAY);
