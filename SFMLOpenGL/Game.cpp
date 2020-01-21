@@ -210,6 +210,80 @@ void Game::update()
 	{
 		movementCLock.restart();
 
+		//center calculation 
+		float sumX = 0;
+		float sumY = 0;
+		float sumZ = 0;
+		for (int i = 0; i < 6; i ++)
+		{
+			sumX += vertex[i].coordinate[0];
+			sumY += vertex[i].coordinate[1];
+			sumZ += vertex[i].coordinate[2];
+		}
+		db::Vector3 center(sumX / 6, sumY / 6, sumZ / 6);
+
+		//------------ROTATING--------------------------
+
+		// rotation X 
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::X))
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				//adapting to vector
+				db::Vector3 v(vertex[i].coordinate[0], vertex[i].coordinate[1], vertex[i].coordinate[2]);
+
+				//rotating
+				v = v - center;
+				v = v * db::Matrix3::rotationX(1);
+				v = v + center;
+
+				//reassigning value 
+				vertex[i].coordinate[0] = v.x;
+				vertex[i].coordinate[1] = v.y;
+				vertex[i].coordinate[2] = v.z;
+			}
+		}
+
+
+		// rotation Y
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y))
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				//adapting to vector
+				db::Vector3 v(vertex[i].coordinate[0], vertex[i].coordinate[1],vertex[i].coordinate[2]);
+
+				//rotating
+				v = v - center;
+				v = v * db::Matrix3::rotationY(1);
+				v = v + center;
+
+				//reassigning value 
+				vertex[i].coordinate[0] = v.x;
+				vertex[i].coordinate[1] = v.y;
+				vertex[i].coordinate[2] = v.z;
+			}
+		}
+
+		// rotation Z 
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				//adapting to vector
+				db::Vector3 v(vertex[i].coordinate[0], vertex[i].coordinate[1], vertex[i].coordinate[2]);
+
+				//rotating
+				v = v - center;
+				v = v * db::Matrix3::rotationZ(1);
+				v = v + center;
+
+				//reassigning value 
+				vertex[i].coordinate[0] = v.x;
+				vertex[i].coordinate[1] = v.y;
+				vertex[i].coordinate[2] = v.z;
+			}
+		}
 
 		//------------TRANSLATING------------------------
 
@@ -282,14 +356,6 @@ void Game::update()
 		}
 
 	}
-
-
-	/*
-	//Change vertex data
-	vertex[0].coordinate[0] += -0.0001f;
-	vertex[0].coordinate[1] += -0.0001f;
-	vertex[0].coordinate[2] += -0.0001f;
-	*/
 
 	cout << "Update up" << endl;
 }
